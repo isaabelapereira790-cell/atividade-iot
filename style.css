@@ -1,0 +1,37 @@
+:root{
+  --bg:#eef2f0; --ink:#17302b; --muted:#5d716c; --card:#fff;
+  --accent:#0b7a6b; --accent-ink:#fff; --line:#cfdad6; --danger:#b3261e;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1d1a;--ink:#e3efec;--muted:#93aaa4;--card:#16292580;--accent:#3fc1ad;--accent-ink:#06211c;--line:#2a4540;--danger:#ff8a80}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Georgia,"Times New Roman",serif}
+h1{font-size:1.6rem;margin:0;letter-spacing:-.01em}
+.screen{max-width:640px;margin:0 auto;padding:2rem 1rem}
+[hidden]{display:none!important}
+.sr-only{position:absolute;left:-9999px}
+input,button{font:inherit;color:inherit}
+input[type=text],input[type=email],input[type=password]{
+  width:100%;padding:.65rem .8rem;border:1px solid var(--line);border-radius:6px;background:var(--card)}
+input:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+button{padding:.6rem 1rem;border:1px solid var(--line);border-radius:6px;background:transparent;cursor:pointer}
+button.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.auth-card{margin-top:10vh;padding:2rem;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.lead{color:var(--muted);margin:.4rem 0 1.4rem}
+label{display:block;margin:.9rem 0 .3rem;font-size:.95rem}
+.row{display:flex;gap:.6rem;margin-top:1.2rem}
+.error{color:var(--danger);margin:.8rem 0 0}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.topbar span{color:var(--muted);margin-right:.6rem;font-size:.9rem}
+.task-form{display:flex;gap:.6rem;margin-bottom:1.2rem}
+.task-list{list-style:none;margin:0;padding:0}
+.task{display:flex;align-items:center;gap:.7rem;padding:.7rem .9rem;margin-bottom:.5rem;background:var(--card);border:1px solid var(--line);border-radius:8px}
+.task input[type=checkbox]{width:1.2rem;height:1.2rem;accent-color:var(--accent)}
+.task .title{flex:1;overflow-wrap:anywhere}
+.task.done .title{text-decoration:line-through;color:var(--muted)}
+.task button{padding:.3rem .6rem;font-size:.85rem}
+.task button.del{color:var(--danger)}
+.task .edit-input{flex:1}
+.empty{color:var(--muted);text-align:center;margin-top:2rem}
+@media (max-width:480px){.task-form{flex-direction:column}}
